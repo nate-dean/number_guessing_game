@@ -22,37 +22,12 @@ function setDifficulty(difficultyValue){
 
 function evaulateDifficulty(){
     if (difficultyChoice === 1){
-        console.log("You Selected Easy!")
+        console.log("You Selected Easy! You Have 10 Chances.")
     } else if (difficultyChoice === 2){
-        console.log("You Selected Medium!")
+        console.log("You Selected Medium! You Have 5 Chances.")
     } else if (difficultyChoice === 3){
-        console.log("You Selected Hard!")
+        console.log("You Selected Hard! You Have 3 Chances.")
     } else {
         "Error"
     }
 } ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function difficultySelector(){
-//     if (easyButton){
-//         console.log("You Selected Easy!")
-//     } else if (mediumButton){
-//         console.log("You Selected Medium!")
-//     } else (hardButton)
-//         console.log("You Selected Hard!")
-// };
-
-// easyButton.addEventListener("click", difficultySelector);
-// mediumButton.addEventListener("click", difficultySelector);
-// hardButton.addEventListener("click", difficultySelector);
