@@ -33,7 +33,17 @@ const rl = readline.createInterface({
 });
 
 rl.question("Enter your Choice:", (answer) => {
-    console.log(`Great you have selected the ${answer} difficulty level.`)
+    let modifiedAnswer;
+    if(answer === "1"){
+        modifiedAnswer = "Great you have selected the Easy difficulty level!";
+    } else if (answer === "2"){
+        modifiedAnswer = "Great you have selected the Medium difficulty level!";
+    } else if (answer === "3"){
+        modifiedAnswer = "Great you have selected the Hard difficulty level!";
+    } else {
+        modifiedAnswer = `Great you have selected the ${answer} difficulty level!`
+    };
+     console.log(modifiedAnswer);
 
     rl.close();
 });
