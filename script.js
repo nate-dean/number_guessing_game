@@ -12,6 +12,7 @@ function generateNum(){
     return Math.floor(Math.random() * (MAX - MIN + 1)) + MIN;
 };
 
+
 //Select Difficulty
 
 console.log("Please select the Difficulty Level:")
@@ -32,21 +33,29 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-rl.question("Enter your Choice:", (answer) => {
-    let modifiedAnswer;
-    if(answer === "1"){
-        modifiedAnswer = "Great you have selected the Easy difficulty level!";
-    } else if (answer === "2"){
-        modifiedAnswer = "Great you have selected the Medium difficulty level!";
-    } else if (answer === "3"){
-        modifiedAnswer = "Great you have selected the Hard difficulty level!";
-    } else {
-        modifiedAnswer = `Great you have selected the ${answer} difficulty level!`
+
+const askQuestion = () => {
+    rl.question("Enter your Choice:", (answer) => {
+        let modifiedAnswer;
+        if(answer === "1"){
+            modifiedAnswer = "Great you have selected the Easy difficulty level!";
+            rl.close();
+        } else if (answer === "2"){
+            modifiedAnswer = "Great you have selected the Medium difficulty level!";
+            rl.close();
+        } else if (answer === "3"){
+            modifiedAnswer = "Great you have selected the Hard difficulty level!";
+            rl.close();
+        } else {
+            modifiedAnswer = `${answer} is not a valid answer, please select from 1, 2 or 3.`;
+            askQuestion();
+        };
+         console.log(modifiedAnswer);
+
+    });
     };
-     console.log(modifiedAnswer);
-
-    rl.close();
-});
+    askQuestion();
+    
 
 
 
@@ -87,25 +96,31 @@ rl.question("Enter your Choice:", (answer) => {
 
 
 
-// const easyButton = document.getElementById("easy");
-// const mediumButton = document.getElementById("medium");
-// const hardButton = document.getElementById("hard");
 
-// let difficulty = 0;
 
-// function setDifficulty(difficultyValue){
-//     difficultyChoice = difficultyValue;
-//     evaulateDifficulty();
-// };
 
-// function evaulateDifficulty(){
-//     if (difficultyChoice === 1){
-//         console.log("You Selected Easy! You Have 10 Chances.")
-//     } else if (difficultyChoice === 2){
-//         console.log("You Selected Medium! You Have 5 Chances.")
-//     } else if (difficultyChoice === 3){
-//         console.log("You Selected Hard! You Have 3 Chances.")
-//     } else {
-//         "Error"
-//     }
-// } ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
