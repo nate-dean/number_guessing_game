@@ -53,25 +53,53 @@ const askQuestion = () => {
     };
     askQuestion();
 
+    const enterGuess = () => {
+        rl.question("Enter your Guess: ", (guess) => {
+            const userGuess = Number(guess);
+            
+            if (userGuess === computerNum){
+                console.log("Congratulations! You guessed the correct number in __ attempts.!");
+                rl.close();
+            } else if (userGuess > computerNum){
+                console.log(`Incorrect! The number is less than ${userGuess}`);
+                enterGuess();
+            } else {
+                console.log(`Incorrect! The number is higher than ${userGuess}`);
+                enterGuess();
+            }
+        }) 
+    };
+   
 
-const enterGuess = () => {
-    rl.question("Enter your Guess: ", (userGuess) => {
-        
-        if (userGuess > computerNum){
-            userGuess = `Incorrect! The number is less than ${userGuess}`;
-            enterGuess();
-        } else if (userGuess < computerNum){
-            userGuess = `Incorrect! The number is less than ${userGuess}`;
-            enterGuess();
-        } else if (userGuess === computerNum){
-            userGuess = "Congratulations! You guessed the Correct Number in _ attempts!"
-            rl.close();
-        };
-    });
-};
 
 
-//needs to read console log then call the ask question function
+
+
+
+
+
+
+
+
+
+// const enterGuess = () => {
+//     rl.question("Enter your Guess: ", (guess) => {
+//         let userGuess;
+//         if (guess > computerNum){
+//             userGuess = `Incorrect! The number is less than ${guess}`;
+//             enterGuess();
+//         } else if (guess < computerNum){
+//             userGuess = `Incorrect! The number is less than ${guess}`;
+//             enterGuess();
+//         } else if (guess === computerNum){
+//             userGuess = "Congratulations! You guessed the Correct Number in _ attempts!"
+//             rl.close();
+//         };
+//     });
+// };
+
+
+
 
 
 
